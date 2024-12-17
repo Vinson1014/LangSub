@@ -7,6 +7,8 @@ from services import TranslationConfig
 from LS_types import TranslationCallback, TranslationMode, ProgressInfo, TranslationState, BatchResult
 from LS_core.translator import SubtitleTranslator
 from utils import TerminologyHandler
+from ui import Ui_HomePage, Ui_LLMSettings
+from constants import ResourcePaths
 
 import asyncio
 from qasync import QEventLoop, asyncSlot
@@ -23,8 +25,6 @@ from qfluentwidgets import *
 from enum import Enum
 from qframelesswindow import FramelessWindow, StandardTitleBar
 
-from GUI_qtdesigner.Ui_translation import Ui_HomePage
-from GUI_qtdesigner.Ui_llm_setting import Ui_LLMSettings
 
 logging.basicConfig(level=logging.INFO)
 
@@ -582,7 +582,7 @@ class AppSettingsPage(QWidget):
         )
 
         self.linkCard = HyperlinkCard(
-            url="https://google.com",
+            url="https://github.com/Vinson1014/LangSub",
             text=self.tr("打開幫助文件"),
             icon=FIF.HELP,
             title=self.tr("幫助"),
@@ -766,7 +766,8 @@ class Window(FramelessWindow):
 
     def setQss(self):
         color = 'dark' if isDarkTheme() else 'light'
-        with open(f'ui/resource/{color}/demo.qss', encoding='utf-8') as f:
+        qss_path = ResourcePaths.QSS_DARK if color == 'dark' else ResourcePaths.QSS_LIGHT
+        with open(qss_path, encoding='utf-8') as f:
             self.setStyleSheet(f.read())
 
     def switchTo(self, widget):
