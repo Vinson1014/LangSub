@@ -57,7 +57,7 @@ LangSub-朗译 是一款基于大型语言模型（LLM）的字幕翻译工具�
 本项目使用 **Poetry** 管理依赖，让你轻松安装和管理所需的库。
 
 ```bash
-git clone https://github.com/your-username/langsub.git
+git clone https://github.com/Vinson1014/LangSub.git
 poetry shell
 poetry install
 ```

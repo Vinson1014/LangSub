@@ -57,7 +57,7 @@ LangSub-Translation is a subtitle translation tool based on large language model
 This project uses **Poetry** to manage dependencies, allowing you to easily install and manage required libraries.
 
 ```bash
-git clone https://github.com/your-username/langsub.git
+git clone https://github.com/Vinson1014/LangSub.git
 poetry shell
 poetry install
 ```
